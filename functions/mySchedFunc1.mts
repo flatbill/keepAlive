@@ -1,8 +1,7 @@
 // YOUR_BASE_DIRECTORY/netlify/functions/test-scheduled-function.mts
 
 import type { Config } from "@netlify/functions"
-import apiSupabase from '../../../src/utils/apiSupabase'
-
+// import apiSupabase from '../../../src/utils/apiSupabase'
 
 export default async (req: Request) => {
     const { next_run } = await req.json()
@@ -11,7 +10,8 @@ export default async (req: Request) => {
     console.log('ready to read supabase')
     let supaFldsCustQid = {"cust": '2', "qid": '1'}
     // await this.launchReadSupabase('qtUsers',supaFldsCustQid)  
-    let supaRes = await apiSupabase.readSupabase('qtUsers',supaFldsCustQid)
+    // let supaRes = await apiSupabase.readSupabase('qtUsers',supaFldsCustQid)
+    let supaRes = await  readSupabase('qtUsers',supaFldsCustQid)
     console.log('done reading supabase')
     return new Response("Ok")
 
@@ -33,6 +33,6 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "5 * * * *"
+    schedule: "10 * * * *"
 }
 
