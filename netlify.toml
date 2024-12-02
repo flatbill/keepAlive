@@ -1,8 +1,11 @@
+ # This is a TOML document
  [functions]
    directory = "functions"
- [functions.readSupabase]
-   external_node_modules =
-   [
-    "@supabase/supabase-js",
-    "@netlify/functions"
-    ]
+   #
+ #  external_node_modules =
+#   [
+ #   "@supabase/supabase-js",
+#    "@netlify/functions"
+ #   ]
+
+
