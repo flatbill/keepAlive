@@ -2,7 +2,7 @@
 
 import type { Config } from "@netlify/functions"
 // import apiSupabase from '../../../src/utils/apiSupabase'
-import {readSupabase} from 'functions/readSupabase.js'
+import {readSupabase} from '@netlify/functions/readSupabase.js'
 // import {readSupabase} from 'readSupabase.js'
 export default async (req: Request) => {
     const { next_run } = await req.json()
@@ -34,6 +34,6 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "33 * * * *"
+    schedule: "38 * * * *"
 }
 
