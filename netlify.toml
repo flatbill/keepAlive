@@ -2,3 +2,11 @@
    directory = "functions"
  [functions.readSupabase]
    external_node_modules = ["@supabase/supabase-js"]
+   [build]
+  # other build settings
+   [[build.plugins]]
+    package = "@netlify/plugin-functions-core"
+    [build.plugins.inputs]
+    externalNodeModules = [
+        "@netlify/functions"
+    ]
