@@ -1,0 +1,4 @@
+ [functions]
+   directory = "functions"
+ [functions.readSupabase]
+   external_node_modules = ["@supabase/supabase-js"]
