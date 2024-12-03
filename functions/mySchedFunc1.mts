@@ -9,24 +9,25 @@ export default async (req: Request) => {
     console.log('ready to read supabase')
     let supaFlds = {"cust": '2', "qid": '1', "status":'active'}
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFlds )
-    let supaData = supaRes.supabaseData
-    console.log('supaData:')
-    console.table(supaData)
+    let supaDataArray = supaRes.supabaseData
+    console.log('supaDataArray:')
+    console.table(supaDataArray)
     console.log('done reading supabase')
-    reportActiveAssTaker(supaData)
+    if (this.supaDataArray.length > 0 ) {
+        reportActiveAssTaker(supaDataArray)
+    } else {
+        console.log('supaDataArray is null for qtUsers  ' + supaFlds)
+    }
     return new Response("Ok")
-    function reportActiveAssTaker(supaData:any){
-        if (supaData[0].length > 0) {
-          console.log('found an active assessment taker:')
-          console.log("qUserId: " + supaData[0].qUserId)
-        } else {
-          console.log('no active assessment taker found.')
-        } //end if else
+     
+    function reportActiveAssTaker(supaDataArray:any){
+      console.log('found an active assessment taker:')
+      console.log("qUserId: " + supaData[0].qUserId)
     } // end fun reportActiveAssTaker
 } // end export
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "31 * * * *"
+    schedule: "47 * * * *"
 }
 
