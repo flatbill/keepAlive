@@ -16,12 +16,13 @@ export default async (req: Request) => {
     console.log('supaData:')
     console.table(supaData)
     console.log('done reading supabase')
+    hiBaby(supaData:any)
     return new Response("Ok")
-      
+    function hiBaby(supaData:any){console.log("hi " + supaData.firstName)}
 } // end export
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "40 * * * *"
+    schedule: "50 * * * *"
 }
 
