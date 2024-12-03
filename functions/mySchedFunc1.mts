@@ -11,8 +11,7 @@ export default async (req: Request) => {
     let supaDataArray = []
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFlds )
     console.log('done awaiting apiSupabase.')
-    console.log('supaRes length:') 
-    console.log(supaRes.length)//length is undefined
+    // console.log(supaRes.length)//length is undefined
     console.log('supaRes.supabaseData:')
     console.log(supaRes.supabaseData)
     if (supaRes.supabaseData === undefined) {
@@ -21,36 +20,14 @@ export default async (req: Request) => {
         console.log('supaRes.supabaseData is NOT undefined')
         console.log( supaRes.supabaseData  )
         console.log( supaRes.supabaseData.length  )
-        // let arr = ['a','b','c']
-        // console.log( arr.length  ) //3
-        // let arr2 = [{'wingo' : 'bla'},{'wingo' : 'bla'},{'wingo' : 'bla'}]
-        // console.log( arr2.length  ) //3
         if (supaRes.supabaseData.length>0 ) {
-          console.log('first user entry found:')
+          console.log('active user:')
           console.log(supaRes.supabaseData[0].qUserId)
-        }
-
-    }
-    // if (supaData == null) {supaData = []}
-    // console.log('supaDataArray:')
-    // console.table(supaDataArray)
-    // console.log('typeof supaDataArray:')
-    // console.log(typeof supaDataArray)
-    // console.log('done reading supabase')
-    // if (supaDataArray.length > 0 ) {
-    //     reportActiveAssTaker(supaDataArray)
-    // } else {
-    //     console.log('supaDataArray is empty for qtUsers. keys:  ' + supaFlds)
-    // }
-    // return new Response("Ok")
-     
-    // function reportActiveAssTaker(supaDataArray:any){
-    //   console.log('found an active assessment taker:')
-    //   console.log("qUserId: " + supaData[0].qUserId)
-    // } // end fun reportActiveAssTaker
+        }//end if
+    }// end if else
 } // end export
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "31 * * * *"
+    schedule: "38 * * * *"
 }
