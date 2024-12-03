@@ -17,7 +17,11 @@ export default async (req: Request) => {
     console.log(supaRes.supabaseData)
     if (supaRes.supabaseData === undefined) {
         console.log('supaRes.supabaseData is undefined')
-      }
+    } else {
+        console.log('supaRes.supabaseData is NOT undefined')
+        console.log( supaRes.supabaseData  )
+
+    }
     // if (supaData == null) {supaData = []}
     // console.log('supaDataArray:')
     // console.table(supaDataArray)
@@ -39,5 +43,5 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "55 * * * *"
+    schedule: "02 * * * *"
 }
