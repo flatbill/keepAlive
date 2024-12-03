@@ -9,7 +9,8 @@ export default async (req: Request) => {
     console.log('ready to read supabase')
     let supaFlds = {"cust": '2', "qid": '1', "status":'active'}
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFlds )
-    let supaDataArray = supaRes.supabaseData
+    let supaDataArray = []
+    supaDataArray = supaRes.supabaseData
     console.log('supaDataArray:')
     console.table(supaDataArray)
     console.log('done reading supabase')
@@ -28,6 +29,6 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "47 * * * *"
+    schedule: "53 * * * *"
 }
 
