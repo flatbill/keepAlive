@@ -18,11 +18,11 @@ export default async (req: Request) => {
     console.log('done reading supabase')
     hiBaby(supaData)
     return new Response("Ok")
-    function hiBaby(supaData:any){console.log("hi " + supaData.firstName)}
+    function hiBaby(supaData:any){console.log("hi " + supaData[0].firstName)}
 } // end export
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "57 * * * *"
+    schedule: "02 * * * *"
 }
 
