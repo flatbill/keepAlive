@@ -21,11 +21,14 @@ export default async (req: Request) => {
         console.log('supaRes.supabaseData is NOT undefined')
         console.log( supaRes.supabaseData  )
         console.log( supaRes.supabaseData.length  )
-        let arr = ['a','b','c']
-        console.log( arr.length  )
-        let arr2 = [{'wingo' : 'bla'},{'wingo' : 'bla'},{'wingo' : 'bla'}]
-        console.log( arr2.length  )
-
+        // let arr = ['a','b','c']
+        // console.log( arr.length  ) //3
+        // let arr2 = [{'wingo' : 'bla'},{'wingo' : 'bla'},{'wingo' : 'bla'}]
+        // console.log( arr2.length  ) //3
+        if (supaRes.supabaseData.length>0 ) {
+          console.log('first user entry found:')
+          console.log(supaRes.supabaseData[0].qUserId)
+        }
 
     }
     // if (supaData == null) {supaData = []}
@@ -49,5 +52,5 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "21 * * * *"
+    schedule: "31 * * * *"
 }
