@@ -21,6 +21,11 @@ export default async (req: Request) => {
         console.log('supaRes.supabaseData is NOT undefined')
         console.log( supaRes.supabaseData  )
         console.log( supaRes.supabaseData.length  )
+        let arr = ['a','b','c']
+        console.log( arr.length  )
+        let arr2 = [{'wingo' : 'bla'},{'wingo' : 'bla'},{'wingo' : 'bla'}]
+        console.log( arr2.length  )
+
 
     }
     // if (supaData == null) {supaData = []}
@@ -44,5 +49,5 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "11 * * * *"
+    schedule: "21 * * * *"
 }
