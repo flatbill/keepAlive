@@ -16,7 +16,7 @@ export default async (req: Request) => {
     reportActiveAssTaker(supaData)
     return new Response("Ok")
     function reportActiveAssTaker(supaData:any){
-        if(supaData.length > 0){
+        if (supaData[0].length > 0) {
           console.log('found an active assessment taker:')
           console.log("qUserId: " + supaData[0].qUserId)
         } else {
@@ -27,6 +27,6 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "23 * * * *"
+    schedule: "31 * * * *"
 }
 
