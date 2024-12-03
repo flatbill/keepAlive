@@ -12,7 +12,8 @@ export default async (req: Request) => {
     let supaFldsCustQid = {"cust": '2', "qid": '1'}
     // let supaRes = await  readSupabase('qtUsers',supaFldsCustQid) 
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFldsCustQid)
-    let supaData = supaRes.supabaseData
+    let supaData = supaRes.
+    console.log('supaData:')
     console.table(supaData)
     console.log('done reading supabase')
     return new Response("Ok")
@@ -21,6 +22,6 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "15 * * * *"
+    schedule: "34 * * * *"
 }
 
