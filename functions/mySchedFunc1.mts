@@ -9,15 +9,16 @@ export default async (req: Request) => {
     console.log('ready to read supabase')
     let supaFlds = {"cust": '2', "qid": '1', "status":'active'}
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFlds )
-    let supaDataArray = []
-    supaDataArray = supaRes.supabaseData
+    supaData = supaRes.supabaseData
+    if (supaData === null) {supaData = []}
+    supaDataArray = supaData
     console.log('supaDataArray:')
     console.table(supaDataArray)
     console.log('done reading supabase')
-    if (this.supaDataArray.length > 0 ) {
+    if (supaDataArray.length > 0 ) {
         reportActiveAssTaker(supaDataArray)
     } else {
-        console.log('supaDataArray is null for qtUsers  ' + supaFlds)
+        console.log('supaDataArray is empty for qtUsers. keys:  ' + supaFlds)
     }
     return new Response("Ok")
      
@@ -29,6 +30,6 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "53 * * * *"
+    schedule: "04 * * * *"
 }
 
