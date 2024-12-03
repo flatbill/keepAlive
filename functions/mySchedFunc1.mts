@@ -8,28 +8,32 @@ export default async (req: Request) => {
     console.log("running mySchedFunc1.mts")
     console.log('ready to read supabase')
     let supaFlds = {"cust": '2', "qid": '1', "status":'active'}
+    let supaDataArray = []
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFlds )
-    supaData = supaRes.supabaseData
-    if (supaData === null) {supaData = []}
-    supaDataArray = supaData
-    console.log('supaDataArray:')
-    console.table(supaDataArray)
-    console.log('done reading supabase')
-    if (supaDataArray.length > 0 ) {
-        reportActiveAssTaker(supaDataArray)
-    } else {
-        console.log('supaDataArray is empty for qtUsers. keys:  ' + supaFlds)
-    }
-    return new Response("Ok")
+    console.log('done awaiting apiSupabase.')
+    console.log('supaRes length:')
+    console.log(supaRes.length)
+    // let supaData = supaRes.supabaseData
+    // if (supaData == null) {supaData = []}
+    // console.log('supaDataArray:')
+    // console.table(supaDataArray)
+    // console.log('typeof supaDataArray:')
+    // console.log(typeof supaDataArray)
+    // console.log('done reading supabase')
+    // if (supaDataArray.length > 0 ) {
+    //     reportActiveAssTaker(supaDataArray)
+    // } else {
+    //     console.log('supaDataArray is empty for qtUsers. keys:  ' + supaFlds)
+    // }
+    // return new Response("Ok")
      
-    function reportActiveAssTaker(supaDataArray:any){
-      console.log('found an active assessment taker:')
-      console.log("qUserId: " + supaData[0].qUserId)
-    } // end fun reportActiveAssTaker
+    // function reportActiveAssTaker(supaDataArray:any){
+    //   console.log('found an active assessment taker:')
+    //   console.log("qUserId: " + supaData[0].qUserId)
+    // } // end fun reportActiveAssTaker
 } // end export
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "04 * * * *"
+    schedule: "24 * * * *"
 }
-
