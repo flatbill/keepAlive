@@ -1,7 +1,7 @@
 // YOUR_BASE_DIRECTORY/netlify/functions/test-scheduled-function.mts
 
 import type { Config } from "@netlify/functions"
-// import apiSupabase from '../../../src/utils/apiSupabase'
+import apiSupabase from '../utils/apiSupabase'
 // import {readSupabase} from '@netlify/functions/readSupabase.js'
 // import {readSupabase} from 'readSupabase.js'
 export default async (req: Request) => {
@@ -18,6 +18,6 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "19 * * * *"
+    schedule: "29 * * * *"
 }
 
