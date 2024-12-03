@@ -12,14 +12,11 @@ export default async (req: Request) => {
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFlds )
     console.log('done awaiting apiSupabase.')
     // console.log(supaRes.length)//length is undefined
-    console.log('supaRes.supabaseData:')
-    console.log(supaRes.supabaseData)
+    // console.log('supaRes.supabaseData:')
+    // console.log(supaRes.supabaseData)
     if (supaRes.supabaseData === undefined) {
         console.log('supaRes.supabaseData is undefined')
     } else {
-        console.log('supaRes.supabaseData is NOT undefined')
-        console.log( supaRes.supabaseData  )
-        console.log( supaRes.supabaseData.length  )
         if (supaRes.supabaseData.length>0 ) {
           console.log('active user:')
           console.log(supaRes.supabaseData[0].qUserId)
@@ -29,5 +26,5 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "42 * * * *"
+    schedule: "55 * * * *"
 }
