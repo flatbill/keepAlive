@@ -13,17 +13,20 @@ export default async (req: Request) => {
     console.log('supaData:')
     console.table(supaData)
     console.log('done reading supabase')
-    hiBaby(supaData)
+    reportActiveAssTaker(supaData)
     return new Response("Ok")
-    function hiBaby(supaData:any){
+    function reportActiveAssTaker(supaData:any){
         if(supaData.length > 0){
-          console.log("hi " + supaData[0].firstName)
-        }
-    }
+          console.log('found an active assessment taker:')
+          console.log("qUserId: " + supaData[0].qUserId)
+        } else {
+          console.log('no active assessment taker found.')
+        } //end if else
+    } // end fun reportActiveAssTaker
 } // end export
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "14 * * * *"
+    schedule: "23 * * * *"
 }
 
