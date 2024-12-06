@@ -4,9 +4,9 @@ import type { Config } from "@netlify/functions"
 import apiSupabase from '../utils/apiSupabase'
 export default async (req: Request) => {
     const { next_run } = await req.json()
-    console.log("Received event! Next invocation at:", next_run)
-    console.log("running mySchedFunc1.mts")
-    console.log('ready to read supabase')
+    console.log(Date.now() + "Received event! Next invocation at:", next_run)
+    console.log(Date.now() + "running mySchedFunc1.mts")
+    console.log(Date.now() + 'ready to read supabase')
     let supaFlds = {"cust": '2', "qid": '1', "status":'active'}
     let supaDataArray = []
     let supaRes = await apiSupabase.readSupabase('qtUsers',supaFlds )
@@ -18,13 +18,13 @@ export default async (req: Request) => {
         console.log('supaRes.supabaseData is undefined')
     } else {
         if (supaRes.supabaseData.length>0 ) {
-          console.log('active user:')
-          console.log(supaRes.supabaseData[0].qUserId)
+          console.log(Date.now() +  ' active user:')
+          console.log(Date.now() + supaRes.supabaseData[0].qUserId)
         }//end if
     }// end if else
 } // end export
 
 export const config: Config = {
     // schedule: "@hourly"  
-    schedule: "55 * * * *"
+    schedule: "03 * * * *"
 }
