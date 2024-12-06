@@ -25,6 +25,6 @@ export default async (req: Request) => {
 } // end export
 
 export const config: Config = {
-    // schedule: "@hourly"  
-    schedule: "28 * * * *"
+    schedule: "@daily"        // to test, comment  out and use sched below.
+    // schedule: "28 * * * *" //28 minutes past the hour. use this to test. 
 }
