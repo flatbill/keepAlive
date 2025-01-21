@@ -26,11 +26,11 @@ export default async (req: Request) => {
   console.log(Date.now()/1000  ,  ' attempt to read turso qtSubscribers:')
   let tblKeys = {  rowid: '1' }
   let tursoResponse = await apiTurso.readTurso('qtSubscribers',tblKeys)  
-  console.log(Date.now()/1000  , tursoResponse.body)
+  console.log(Date.now()/1000  , tursoResponse)
   console.log(Date.now()/1000  , ' end of mySchedFunc1.mts')
 } // end export
 
 export const config: Config = {
     // schedule: "@daily"        
-    schedule: "55 * * * *" //xx minutes past the hour. use this to test. 
+    schedule: "58 * * * *" //xx minutes past the hour. use this to test. 
 }
