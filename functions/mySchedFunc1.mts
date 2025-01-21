@@ -31,5 +31,5 @@ export default async (req: Request) => {
 
 export const config: Config = {
     // schedule: "@daily"        
-    schedule: "04 * * * *" //xx minutes past the hour. use this to test. 
+    schedule: "06 * * * *" //xx minutes past the hour. use this to test. 
 }
