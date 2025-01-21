@@ -1,7 +1,4 @@
-  [functions]
-   directory = "functions"
-   external_node_modules = [   "@netlify/core"]
-
- [functions.readUsers2]
-   external_node_modules = ["@supabase/supabase-js"]
+[functions]
+  directory = "functions"
+  external_node_modules = [   "@netlify/core"]
    
