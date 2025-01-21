@@ -24,12 +24,12 @@ export default async (req: Request) => {
   }// end if else
   /////// read turso:
   console.log(performance.now()  +  ' attempt to read turso user:')
-  tblKeys = {  rowid: '1' }
+  let tblKeys = {  rowid: '1' }
   let tursoResponse = await apiTurso.readTurso('teamMembers',tblKeys)  
   console.log(performance.now()  + tursoResponse)
 } // end export
 
 export const config: Config = {
     // schedule: "@daily"        
-    schedule: "08 * * * *" //xx minutes past the hour. use this to test. 
+    schedule: "11 * * * *" //xx minutes past the hour. use this to test. 
 }
