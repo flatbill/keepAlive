@@ -18,20 +18,20 @@ export default async (req: Request) => {
     console.log(Date.now()/1000, 'supaRes.supabaseData is undefined')
   } else {
     if (supaRes.supabaseData.length>0 ) {
-      console.log(Date.now()/1000,  'supabase active user:')
+      console.log(Date.now()/1000,  '21 supabase active user:')
       console.log(Date.now()/1000, supaRes.supabaseData[0].qUserId)
     }//end if
   }// end if else
   /////// read turso:
-  console.log(Date.now()/1000,  'ready to read turso qtSubscribers:')
+  console.log(Date.now()/1000,  '26 ready to read turso qtSubscribers:')
   let tblKeys = {  rowid: '1' }
   let tursoResponse = await apiTurso.readTurso('qtSubscribers',tblKeys) 
   console.log(Date.now()/1000  ,'29 done awaiting for apiTurso.readTurso') 
   console.log(Date.now()/1000  , tursoResponse)
-  console.log(Date.now()/1000  , ' end of mySchedFunc1.mts')
+  console.log(Date.now()/1000  , ' 31 end of mySchedFunc1.mts')
 } // end export
 
 export const config: Config = {
     // schedule: "@daily"        
-    schedule: "18 * * * *" //xx minutes past the hour. use this to test. 
+    schedule: "19 * * * *" //xx minutes past the hour. use this to test. 
 }
