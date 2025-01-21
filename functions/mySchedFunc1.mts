@@ -23,13 +23,13 @@ export default async (req: Request) => {
     }//end if
   }// end if else
   /////// read turso:
-  console.log(Date.now()/1000  +  ' attempt to read turso qtTeamMembers:')
+  console.log(Date.now()/1000  +  ' attempt to read turso qtSubscribers:')
   let tblKeys = {  rowid: '1' }
-  let tursoResponse = await apiTurso.readTurso('qtTeamMembers',tblKeys)  
+  let tursoResponse = await apiTurso.readTurso('qtSubscribers',tblKeys)  
   console.log(Date.now()/1000  + tursoResponse)
 } // end export
 
 export const config: Config = {
     // schedule: "@daily"        
-    schedule: "55 * * * *" //xx minutes past the hour. use this to test. 
+    schedule: "04 * * * *" //xx minutes past the hour. use this to test. 
 }
